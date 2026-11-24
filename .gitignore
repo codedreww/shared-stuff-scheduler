@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Challenge brief (the company's document, kept local only)
+*.pdf
