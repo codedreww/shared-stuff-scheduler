@@ -2,7 +2,7 @@
 
 A small web app for booking shared company resources — a company vehicle, a portable projector, and a StarLink Mobile Unit — without double-booking.
 
-Live demo: TODO add Vercel link
+Live demo: https://shared-stuff-scheduler.vercel.app/
 
 Built with React, Vite, TypeScript, Tailwind CSS, and shadcn/ui (the Base UI variant), with tests in Vitest. There is no server; data lives in the browser's `localStorage`, and the app is deployed on Vercel as a static site. I developed it with help from T3 Code.
 
