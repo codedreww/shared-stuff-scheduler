@@ -29,7 +29,7 @@ To reset back to the seeded example data, clear the site's `localStorage` (key `
 - **User picker:** A "Booking as" dropdown lets you switch between three seeded users instead of logging in.
 - **Resources:** Tabs switch between the Company Vehicle, Portable Projector, and StarLink Mobile Unit, each with a short description.
 - **Date controls:** Move by previous/next day, jump via a calendar, or return to Today. Past dates are disabled.
-- **Day grid:** Shows hourly slots from 7:00 to 19:00 for the selected resource and date, displaying who booked each block and styling your own bookings differently. Select free hours by dragging with a mouse, or by clicking a start hour and then an end hour (which also works on a phone), then press **Book**.
+- **Day grid:** Shows hourly slots from 7:00 to 19:00 for the selected resource and date, displaying who booked each block and styling your own bookings differently. Select free hours by dragging with a mouse, or by clicking a start hour and then an end hour (which also works on a phone), then press **Book**. This design is inspired heavily by when2meet.
 - **My bookings:** Lists the selected user's upcoming bookings across all resources, each with a **Cancel** button and confirmation dialog. Cancelling frees the hours for everyone.
 - **Seed data:** Starts with example bookings dated relative to today so the grid is never empty.
 
