@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
+import { DateControls } from "@/components/DateControls";
+import { DayGrid } from "@/components/DayGrid";
+import { MyBookings } from "@/components/MyBookings";
+import { ResourceTabs } from "@/components/ResourceTabs";
+import { UserPicker } from "@/components/UserPicker";
 import { seedResources } from "@/data/seed";
 import { toDateKey } from "@/lib/booking";
 import type { BookingRequest } from "@/lib/booking";
@@ -27,12 +32,37 @@ function App() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl p-6">
-      {/* UserPicker: state.users, userId, setUserId */}
-      {/* ResourceTabs: seedResources, resourceId, setResourceId */}
-      {/* Date picker: date, setDate */}
-      {/* DayGrid: state.bookings, resourceId, date, userId, handleBook */}
-      {/* MyBookings: state.bookings filtered by userId, handleCancel */}
+    <main className="mx-auto max-w-3xl space-y-6 p-6">
+      <header className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-xl font-semibold">Shared Stuff Scheduler</h1>
+        <UserPicker users={state.users} userId={userId} onChange={setUserId} />
+      </header>
+
+      <ResourceTabs
+        resources={seedResources}
+        resourceId={resourceId}
+        onChange={setResourceId}
+      />
+
+      <DateControls date={date} onChange={setDate} />
+
+      {/* The key resets the selection whenever the resource or date changes. */}
+      <DayGrid
+        key={`${resourceId}-${date}`}
+        bookings={state.bookings}
+        users={state.users}
+        resourceId={resourceId}
+        date={date}
+        userId={userId}
+        onBook={handleBook}
+      />
+
+      <MyBookings
+        bookings={state.bookings}
+        resources={seedResources}
+        userId={userId}
+        onCancel={handleCancel}
+      />
     </main>
   );
 }

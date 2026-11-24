@@ -21,7 +21,7 @@ export const OPEN_HOUR = 7;
 export const CLOSE_HOUR = 19;
 
 /** Every hour that can start a slot: 7, 8, ... 18. */
-const HOURS: number[] = [];
+export const HOURS: number[] = [];
 for (let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++) {
   HOURS.push(hour);
 }
